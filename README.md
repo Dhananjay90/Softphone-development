@@ -4,5 +4,8 @@ A Softphone application to implement SIP (Session Initiation Protocol) functiona
 Please follow the sequence of steps in the EE284 project Softphone.mp4 video file to implement the softphone.
 
 Assumptions:
+
 1) Proxy server like Asterisk is already installed.
 2) Softphones like x-lite is already installed in one of the systems of the network so that client app can make a call to that phone.
+3) PJSUA is already installed.
+4) Ubuntu OS is used
