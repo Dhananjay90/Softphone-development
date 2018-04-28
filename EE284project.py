@@ -51,9 +51,9 @@ try:
 	passwd= sys.argv[3]
 	client=sys.argv[4]
         
-	print "The Client IP address is "+client_ip;
-	print "The Asterisk server IP address is "+server_ip
-	print "The User name is "+user
+	print("The Client IP address is "+client_ip;)
+	print("The Asterisk server IP address is "+server_ip)
+	print("The User name is "+user)
 	
 	#Configuration of Account class to register with the server
 
@@ -81,17 +81,17 @@ try:
 	time.sleep(2)
 	#Registration is successfull only if the status is 200 
 	if account.info().reg_status==200:
-	  print "Registration is successfully completed"
+	  print("Registration is successfully completed")
 	else:
 	  print("\n")
-	  print "Registration is failed as the number is not present in sip.conf!!"
+	  print("Registration is failed as the number is not present in sip.conf!!")
           print("\n")
 	  lib.destroy()
 	  lib = None
 	  sys.exit(1)
 
         
-	print "\n"
+	print("\n")
 	call=raw_input("Do you want to make a call ?   Y/N\n")
 
         
@@ -100,7 +100,7 @@ try:
 	    # Initiate call if Y is pressed
 		print("\n")
 		dest="sip:"+client+"@"+server_ip+":"+str(t_conf.port)
-		print "Making a call to "+client+"@"+server_ip+" through port "+str(t_conf.port)
+		print("Making a call to "+client+"@"+server_ip+" through port "+str(t_conf.port))
 		call_list=["2000","2010","2020"]
                 client_str=str(client)
 		user_str=str(user)
@@ -110,8 +110,8 @@ try:
             
 		     if client_str != user_str:
 		        call_dest = account.make_call(dest)
-			print "Call Ringing"
-			print "\n"
+			print("Call Ringing")
+			print("\n")
 			time.sleep(3)
 			 
 			print('Press ENTER for unregistration')
@@ -128,7 +128,7 @@ try:
 		  	sys.exit(2)
                      else:
 			print("\n")
-			print "Dialled and Dialling number are same. So cannot make a call!"
+			print("Dialled and Dialling number are same. So cannot make a call!")
 			print("\n")
                         lib.destroy()
 
@@ -136,7 +136,7 @@ try:
 		  	sys.exit(2)
                 else:
 		 	print("\n")
-			print "Dialled number is not registered!!"
+			print("Dialled number is not registered!!")
 			print("\n")
 			lib.destroy()
 
@@ -172,7 +172,7 @@ except KeyboardInterrupt:
     	sys.exit(5)
 except IndexError:
 	print("\n")
-	print("Exiting the program due to incorrect number of arguments.Can enter only 4 argments in the order serverip,username,password,clientip ")
+	print("Invalid call")
 
    	lib.destroy()
 
